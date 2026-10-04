@@ -2,22 +2,29 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    public MainPage()
+    {
+        InitializeComponent();
+    }
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    // Appelé quand on clique sur Calculer
+    private async void OnCalculerClicked(object sender, EventArgs e)
+    {
+        // on refuse un nom vide
+        if (string.IsNullOrWhiteSpace(entryNom.Text))
+        {
+            await DisplayAlertAsync("Erreur", "Entrez un nom", "OK");
+            return;
+        }
 
-	private void OnCounterClicked(object? sender, EventArgs e)
-	{
-		count++;
+        // la date peut être nulle en .NET 10, on prend aujourd'hui par défaut
+        DateTime d = pickerDate.Date ?? DateTime.Today;
+        int age = DateTime.Today.Year - d.Year;
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+        // si l'anniversaire n'est pas encore passé cette année, on retire 1 an
+        if (d.Date > DateTime.Today.AddYears(-age)) age--;
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+        lblResultat.Text = $"{entryNom.Text}, vous avez {age} ans";
+        lblResultat.IsVisible = true;
+    }
 }
