@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CalculateurAge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+0bdc27aabb83055fd739cdbbb823d2ba9891fd48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+256c1dc5881bdc47419f0e3cdb570dd984ea4e93")]
 [assembly: System.Reflection.AssemblyProductAttribute("CalculateurAge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CalculateurAge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
